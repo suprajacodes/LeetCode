@@ -3,6 +3,9 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        c=nums.count(0)
-        nums[:] = list(filter(lambda x : x!=0 , nums))+[0]*c
+        l = 0
+        for r in range(len(nums)):
+            if nums[r]:
+                nums[l], nums[r] = nums[r], nums[l]
+                l += 1
         return nums

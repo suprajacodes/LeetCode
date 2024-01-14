@@ -1,9 +1,13 @@
 class Solution:
     def numIdenticalPairs(self, nums: List[int]) -> int:
-        count = 0
-        for i in range(len(nums) - 1):
-            for j in range(i + 1, len(nums)):
-                if (nums[i] == nums[j]):
-                    count += 1
-
-        return count
+        d={}
+        c=0
+        for i in range(len(nums)):
+            if nums[i] in d:
+                d[nums[i]] += 1
+            else:
+                d[nums[i]] = 1
+        for x in d.values():
+            count = (x*(x-1))//2
+            c+=count
+        return c

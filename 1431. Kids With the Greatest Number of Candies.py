@@ -2,7 +2,6 @@ class Solution:
     def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
         l=[]
         c=[]
-        max(candies)
         for i in range (len(candies)):
             c.append(candies[i]+extraCandies)
             print(c[i])
